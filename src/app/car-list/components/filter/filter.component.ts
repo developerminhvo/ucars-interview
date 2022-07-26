@@ -11,10 +11,10 @@ const COMPONENTS = [UCDropdownComponent, UCButtonComponent];
 const DIRECTIVES = [UCDropdownTriggerForDirective]
 
 @Component({
+  standalone: true,
   selector: 'uc-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
-  standalone: true,
   imports: [
     ...MOUDLES,
     ...DIRECTIVES,

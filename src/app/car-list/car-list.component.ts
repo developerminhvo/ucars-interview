@@ -25,6 +25,7 @@ const MODULES = [
 ]
 
 @Component({
+  standalone: true,
   selector: 'uc-car-list',
   templateUrl: './car-list.component.html',
   styleUrls: ['./car-list.component.scss'],
@@ -32,7 +33,6 @@ const MODULES = [
     ...COMPONENTS,
     ...MODULES
   ],
-  standalone: true,
   providers: [provideComponentStore(UCCarlistStore)],
 })
 export class CarListComponent implements OnInit {

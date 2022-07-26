@@ -8,15 +8,15 @@ const COMPONENTS = [UCUploadFileComponent, UCButtonComponent];
 const MODULES = [CommonModule];
 
 @Component({
+  standalone: true,
   selector: 'app-add-brand',
   templateUrl: './add-brand.component.html',
   styleUrls: ['./add-brand.component.scss'],
-  standalone: true,
-  encapsulation: ViewEncapsulation.None,
   imports: [
     ...COMPONENTS,
     ...MODULES
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class UCAddBrandComponent implements OnInit {
 

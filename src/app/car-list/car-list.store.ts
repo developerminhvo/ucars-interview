@@ -63,10 +63,6 @@ export class UCCarlistStore extends ComponentStore<ICarList> implements OnStateI
         })
     )
 
-    public setFilter(filter: ICar[]) {
-        this.patchState({ filter });
-    }
-
     public setKeySearch(keysearch: string) {
         this.patchState({ keysearch });
     }
