@@ -1,6 +1,17 @@
 <section class="us__car-list">
   <ng-template *ngTemplateOutlet="feature"></ng-template>
-  <ng-template *ngTemplateOutlet="list"></ng-template>
+  <ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="vm.keysearch === ''">
+      <ng-container *ngFor="let car of vm.carList">
+        <ng-template *ngTemplateOutlet="list; context: {car: car}"></ng-template>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="vm.keysearch !== ''">
+      <ng-container *ngFor="let car of vm.filter">
+        <ng-template *ngTemplateOutlet="list; context: {car: car}"></ng-template>
+      </ng-container>
+    </ng-container>
+  </ng-container>
 </section>
 
 
@@ -13,9 +24,11 @@
       <uc-filter></uc-filter>
     </div>
     <div class="us__car-list__feature--item">
-      <uc-input-group ucAddOnBeforeIcon="search">
-        <input type="text" uc-input placeholder="Search car brand">
-      </uc-input-group>
+      <form [formGroup]="form">
+        <uc-input-group ucAddOnBeforeIcon="search">
+          <input [formControlName]="'brandName'" type="text" uc-input placeholder="Search car brand">
+        </uc-input-group>
+      </form>
     </div>
     <div class="us__car-list__feature--item">
       <button uc-button ucType="primary" (click)="openAddBrandDialog()">
@@ -26,37 +39,37 @@
   </div>
 </ng-template>
 
-<ng-template #list>
+<ng-template #list let-car="car">
   <div class="us__car-list__container">
     <div class="us__car-list__container--item">
       <i class="material-symbols-outlined">radio_button_unchecked</i>
     </div>
     <div class="us__car-list__container--item">
       <div class="us__car-list__container--item__brand-img"
-      [style.background-image]="'url(' + 'https://global.toyota/pages/global_toyota/mobility/toyota-brand/emblem_001.jpg' + ')' "
+      [style.background-image]="'url(' + car.brandImg + ')' "
       ></div>
     </div>
     <div class="us__car-list__conateinr--item">
       <div class="us__car-list__container--item__brand">
-        <p>Toyota</p>
-        <div class="us__car-list__sub-title">Jeep Grand Cheroke | <span class="hightlight">1200 Models</span></div>
+        <p>{{ car.brandName }}</p>
+        <div class="us__car-list__sub-title">{{ car.description }} | <span class="hightlight">{{ car.quantity }} Models</span></div>
       </div>
     </div>
     <div class="us__car-list__item">
       <div class="us__car-list__item--sort">
         <p class="us__car-list__normal-title">Last Update</p>
-        <p class="us__car-list__sub-title">25/12/2022</p>
+        <p class="us__car-list__sub-title">{{ car.lastUpdate}}</p>
       </div>
     </div>
     <div class="us__car-list__item">
-      <uc-tag [activated]="true">
-        Active
+      <uc-tag [activated]="car.activated">
+        {{ car.activated ? 'Active' : 'Inactive'}}
       </uc-tag>
     </div>
     <div class="us__car-list__item">
-      <button uc-button ucType="default" (click)="openAddBrandDialog()">
+      <button uc-button ucType="default">
         View Details
       </button>
     </div>
-  </div>  
+  </div> 
 </ng-template>

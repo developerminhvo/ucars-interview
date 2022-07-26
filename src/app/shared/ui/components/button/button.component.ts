@@ -35,7 +35,7 @@ export class UCButtonComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    console.log('onInit')
+    
   }
 
 }

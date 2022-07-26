@@ -1,12 +1,24 @@
 .uc__add-brand {
     @apply w-150 h-full flex flex-col rounded bg-white;
     &--header {
-        @apply w-full rounded-t bg-[#FAFAFA] px-6 py-4;
+        @apply w-full flex flex-row items-center justify-between rounded-t bg-[#FAFAFA] px-6 py-4;
         &--titlte {
             @apply text-[#232323] text-base;
         };
         &--sub-title {
             @apply text-[#5F5F5F] text-sm;
+        }
+        &--cancel {
+            @apply cursor-pointer bg-[#E3E3E3] w-8 h-8 rounded-full flex items-center justify-center border border-solid;
+            i {
+                @apply text-base;
+                &:hover {
+                    @apply opacity-80;
+                }
+            }
+            &:hover {
+                @apply opacity-80;
+            }
         }
     }
     &--content {

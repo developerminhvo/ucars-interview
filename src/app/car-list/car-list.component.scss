@@ -22,7 +22,12 @@
             i {
                 @apply text-xl text-[#B4B4B4]
             }
+            &:nth-child(2) {
+                @apply pr-16 border-r-2 border-solid;
+                border-color: #0FC97B
+            }
             &__brand {
+                @apply w-61;
                 p {
                     @apply text-[#2F465F] text-xl mb-1;
                 }

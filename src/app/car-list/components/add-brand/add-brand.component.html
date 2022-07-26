@@ -4,6 +4,11 @@
       <div class="uc__add-brand--header--title">Add Car Brand</div>
       <div class="uc__add-brand--header--sub-title">Set up new car brand</div>
     </div>
+    <div class="uc__add-brand--header--cancel" (click)="closeModal()">
+      <i class="material-symbols-outlined">
+        close
+        </i>
+    </div>
   </div>
   <div class="uc__add-brand--content">
     <ng-template *ngTemplateOutlet="sectionTitle; context: {title: 'Brand Logo'}"></ng-template>
@@ -16,7 +21,7 @@
       </div>
       <div class="uc__add-brand--content__details__item">
         <p>Brand Status</p>
-        <input type="text" value="abc">
+        <input type="text" placeholder="Input Content">
       </div>
       <div class="uc__add-brand--content__details__item">
         <p>Brand Description</p>
@@ -25,7 +30,7 @@
     </div>
   </div>
   <div class="uc__add-brand--action">
-    <button uc-button ucType="default">
+    <button uc-button ucType="default" (click)="closeModal()">
       Cancel
     </button>
     <button uc-button ucType="primary">

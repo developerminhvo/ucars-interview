@@ -1,0 +1,34 @@
+[
+    {
+        "brandName": "Toyota",
+        "description": "Jeep Grand Cheroke",
+        "quantity": 12,
+        "lastUpdate": "25/12/2022",
+        "activated": true,
+        "brandImg": "https://www.google.com/search?q=toyota+brand+logo&sxsrf=ALiCzsY19PFXkhO5qMAbK_BZIouPpRtUEA:1658828164419&tbm=isch&source=iu&ictx=1&vet=1&fir=6F69ZodKVCWHVM%252CSrFie1TXPGFBfM%252C_%253BqY1NZv0Y-VHhoM%252Cgbhxfyc2eJGuYM%252C_%253BQZJ4XukjK676QM%252C0knmvyQY2DvJ1M%252C_%253BHI_jSvmHiO6PrM%252C0knmvyQY2DvJ1M%252C_%253BZi5LVFQxgv36tM%252C3Yfvnknm2zKhzM%252C_%253BKY3OWsxlOZwTLM%252CSrFie1TXPGFBfM%252C_%253B6sLhr2ZfGrF2gM%252CpnVIjpgYgbf2VM%252C_%253BZ-ttvWXnOVBX4M%252CIPmbnn-aYlWnqM%252C_%253B3mPQMdME1qUK8M%252CWMI8Vhzrp5Pe7M%252C_%253BRUqT30CxeYXuoM%252CSMM_WYGe4CYXIM%252C_%253BYA_aHLoXy4HKhM%252CpRfQ03a9fAN-eM%252C_%253B2t2sPEg_SI13UM%252CJ0Aw2JKmP4C7vM%252C_%253BCjBeozVtfbgdRM%252C_iYJ3kmB0tFtqM%252C_&usg=AI4_-kRHtDBsRBooU9Or8gn8Sep0DEKdFA&sa=X&ved=2ahUKEwiG9O67oJb5AhWrR2wGHeAZDu8Q9QF6BAgIEAE#imgrc=Zi5LVFQxgv36tM"
+    },
+    {
+        "brandName": "BMW",
+        "description": "Brand description too long..",
+        "quantity": 800,
+        "lastUpdate": "12/12/2022",
+        "activated": true,
+        "brandImg": ""
+    },
+    {
+        "brandName": "BMW",
+        "description": "Brand description too long..",
+        "quantity": 800,
+        "lastUpdate": "12/12/2022",
+        "activated": true,
+        "brandImg": ""
+    },
+    {
+        "brandName": "BMW",
+        "description": "Brand description too long..",
+        "quantity": 800,
+        "lastUpdate": "12/12/2022",
+        "activated": true,
+        "brandImg": ""
+    }
+]

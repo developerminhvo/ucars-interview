@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { UCButtonComponent, UCUploadFileComponent } from 'src/app/shared/ui';
+import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 const COMPONENTS = [UCUploadFileComponent, UCButtonComponent];
 
@@ -19,9 +20,16 @@ const MODULES = [CommonModule];
 })
 export class UCAddBrandComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<UCAddBrandComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: unknown,
+  ) { }
 
   ngOnInit() {
+  }
+
+  public closeModal(): void {
+    this.dialogRef.close();
   }
 
 }

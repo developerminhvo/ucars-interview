@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { UCInputGroupComponent, UCButtonComponent, UCDropdownComponent, UCTagComponent, UCUploadFileComponent } from '../shared/ui';
 import { UCAddBrandComponent, UCFilterComponent } from './components';
 import {MatDialogModule, MatDialog} from '@angular/material/dialog';
+import { provideComponentStore } from '@ngrx/component-store';
+import { UCCarlistStore } from './car-list.store';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 
 const COMPONENTS = [
   UCButtonComponent, 
@@ -16,6 +20,7 @@ const COMPONENTS = [
 
 const MODULES = [
   CommonModule, 
+  ReactiveFormsModule,
   MatDialogModule
 ]
 
@@ -27,15 +32,34 @@ const MODULES = [
     ...COMPONENTS,
     ...MODULES
   ],
-  standalone: true
+  standalone: true,
+  providers: [provideComponentStore(UCCarlistStore)],
 })
 export class CarListComponent implements OnInit {
 
+  public readonly vm$ = this._carListStore.vm$;
+
+  public form!: FormGroup;
+
   constructor(
-    private _dialog: MatDialog
+    private _carListStore: UCCarlistStore,
+    private _dialog: MatDialog,
+    private _fb: FormBuilder
   ) { }
 
   ngOnInit() {
+    this.initForm();
+    this._carListStore.filterBrand(
+      this.form.valueChanges.pipe(
+        debounceTime(1000)
+      )
+    )
+  }
+
+  public initForm(): void {
+    this.form = this._fb.group({
+      'brandName': ['']
+    })
   }
 
   public openAddBrandDialog(): void {
@@ -45,5 +69,5 @@ export class CarListComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-
 }
+

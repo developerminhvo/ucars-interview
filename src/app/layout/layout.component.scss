@@ -1,9 +1,10 @@
 .uc__layout {
-    @apply w-full h-full grid grid-cols-12;
-    &__content, uc-header {
-        @apply col-span-10 col-start-3;
-    }
+    @apply w-full grid grid-cols-12;
+    height: 768px;
     uc-sidebar {
         @apply col-span-2 row-start-1;
+    }
+    &__container {
+        @apply col-span-10 col-start-3
     }
 }
