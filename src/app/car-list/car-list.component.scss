@@ -1,0 +1,44 @@
+.us__car-list {
+    @apply w-full;
+    &__feature {
+        @apply py-8 px-10.5 w-full flex flex-row justify-start gap-5 items-center;
+        &--item {
+            &:first-child {
+                span {
+                    @apply text-2xl uppercase;
+                }
+            }
+            &:last-child {
+                @apply ml-auto;
+            }
+            &:nth-child(3) {
+                @apply ml-14;
+            }
+        }
+    }
+    &__container {
+        @apply w-full flex flex-row justify-between items-center gap-2 py-7.5 px-10.5 border-b border-solid;
+        &--item {
+            i {
+                @apply text-xl text-[#B4B4B4]
+            }
+            &__brand {
+                p {
+                    @apply text-[#2F465F] text-xl mb-1;
+                }
+            }
+            &__brand-img {
+                @apply w-20 h-16 bg-cover bg-no-repeat;
+            }
+        }
+    }
+    &__normal-title {
+        @apply text-sm text-[#2F465F] mb-3;
+    }
+    &__sub-title {
+        @apply text-sm text-[#8C8C8C];
+        & .hightlight {
+            @apply text-[#0F5EDD];
+        }
+    }
+}

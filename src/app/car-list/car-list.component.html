@@ -1,0 +1,62 @@
+<section class="us__car-list">
+  <ng-template *ngTemplateOutlet="feature"></ng-template>
+  <ng-template *ngTemplateOutlet="list"></ng-template>
+</section>
+
+
+<ng-template #feature>
+  <div class="us__car-list__feature">
+    <div class="us__car-list__feature--item">
+      <span>car brands list</span>
+    </div>
+    <div class="us__car-list__feature--item">
+      <uc-filter></uc-filter>
+    </div>
+    <div class="us__car-list__feature--item">
+      <uc-input-group ucAddOnBeforeIcon="search">
+        <input type="text" uc-input placeholder="Search car brand">
+      </uc-input-group>
+    </div>
+    <div class="us__car-list__feature--item">
+      <button uc-button ucType="primary" (click)="openAddBrandDialog()">
+        <i class="material-symbols-outlined">add</i>
+        Add Brand
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #list>
+  <div class="us__car-list__container">
+    <div class="us__car-list__container--item">
+      <i class="material-symbols-outlined">radio_button_unchecked</i>
+    </div>
+    <div class="us__car-list__container--item">
+      <div class="us__car-list__container--item__brand-img"
+      [style.background-image]="'url(' + 'https://global.toyota/pages/global_toyota/mobility/toyota-brand/emblem_001.jpg' + ')' "
+      ></div>
+    </div>
+    <div class="us__car-list__conateinr--item">
+      <div class="us__car-list__container--item__brand">
+        <p>Toyota</p>
+        <div class="us__car-list__sub-title">Jeep Grand Cheroke | <span class="hightlight">1200 Models</span></div>
+      </div>
+    </div>
+    <div class="us__car-list__item">
+      <div class="us__car-list__item--sort">
+        <p class="us__car-list__normal-title">Last Update</p>
+        <p class="us__car-list__sub-title">25/12/2022</p>
+      </div>
+    </div>
+    <div class="us__car-list__item">
+      <uc-tag [activated]="true">
+        Active
+      </uc-tag>
+    </div>
+    <div class="us__car-list__item">
+      <button uc-button ucType="default" (click)="openAddBrandDialog()">
+        View Details
+      </button>
+    </div>
+  </div>  
+</ng-template>

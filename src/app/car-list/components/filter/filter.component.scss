@@ -1,0 +1,6 @@
+.dropdown-item {
+    @apply px-3 py-1.5 text-sm block;
+    &:hover {
+        @apply bg-[#F4F5F5] cursor-pointer;
+    }
+}

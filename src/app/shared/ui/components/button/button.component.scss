@@ -1,0 +1,19 @@
+
+.uc-btn {
+    @apply flex flex-row items-center py-2 px-4 gap-2 rounded-md;
+    i {
+        @apply text-sm;
+    }
+    &-primary {
+        @apply bg-[#0F5EDD] text-white text-sm;
+    }
+    &-default {
+        @apply bg-white text-[#232323] text-sm border-solid border border-[#B4B4B4];
+    }
+    &-none {
+        @apply bg-white text-[#232323] text-sm;
+    }
+    &:hover {
+        @apply opacity-80;
+    }
+}

@@ -1,0 +1,42 @@
+<section class="uc__add-brand">
+  <div class="uc__add-brand--header">
+    <div class="uc__add-brand--header--container">
+      <div class="uc__add-brand--header--title">Add Car Brand</div>
+      <div class="uc__add-brand--header--sub-title">Set up new car brand</div>
+    </div>
+  </div>
+  <div class="uc__add-brand--content">
+    <ng-template *ngTemplateOutlet="sectionTitle; context: {title: 'Brand Logo'}"></ng-template>
+    <uc-upload-file></uc-upload-file>
+    <ng-template *ngTemplateOutlet="sectionTitle; context: {title: 'Brand Details'}"></ng-template>
+    <div class="uc__add-brand--content__details">
+      <div class="uc__add-brand--content__details__item">
+        <p>Brand Name</p>
+        <input type="text" placeholder="Input Content">
+      </div>
+      <div class="uc__add-brand--content__details__item">
+        <p>Brand Status</p>
+        <input type="text" value="abc">
+      </div>
+      <div class="uc__add-brand--content__details__item">
+        <p>Brand Description</p>
+        <textarea rows="4" placeholder="Input Content"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="uc__add-brand--action">
+    <button uc-button ucType="default">
+      Cancel
+    </button>
+    <button uc-button ucType="primary">
+      Create Brand
+    </button>
+  </div>
+</section>
+
+
+<ng-template #sectionTitle let-title="title">
+  <div class="uc__add-brand--content__section-title" >
+    <span>{{ title }}</span>
+  </div>
+</ng-template>

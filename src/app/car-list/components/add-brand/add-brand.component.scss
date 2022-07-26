@@ -1,0 +1,40 @@
+.uc__add-brand {
+    @apply w-150 h-full flex flex-col rounded bg-white;
+    &--header {
+        @apply w-full rounded-t bg-[#FAFAFA] px-6 py-4;
+        &--titlte {
+            @apply text-[#232323] text-base;
+        };
+        &--sub-title {
+            @apply text-[#5F5F5F] text-sm;
+        }
+    }
+    &--content {
+        @apply px-6 pb-6;
+        &__section-title {
+            @apply py-3 border-b text-sm font-bold mb-4;
+        }
+        &__details {
+            @apply flex flex-row flex-wrap;
+            p {
+                @apply text-sm text-[#8C8C8C] mb-1;
+            }
+            &__item {
+                @apply w-1/2;
+                &:first-child {
+                    @apply pr-8;
+                }
+                &:last-child {
+                    @apply w-full pt-4;
+                }
+            }
+        }
+    }
+    &--action {
+        @apply flex flex-row gap-3 justify-end items-center pb-6 px-6;
+    }
+
+    input, textarea {
+        @apply w-full outline-none px-3.5 py-2.25 bg-[#FFFFFF] rounded text-sm text-[#8C8C8C] border border-solid;
+    }
+}

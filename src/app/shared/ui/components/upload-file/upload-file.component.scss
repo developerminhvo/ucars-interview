@@ -1,0 +1,20 @@
+.uc-upload-file {
+    input {
+        @apply hidden;
+    }
+    &-area {
+        @apply flex flex-col items-center justify-center gap-2 w-30 h-30 bg-[#FAFAFA] rounded-full border border-dashed cursor-pointer text-sm;
+        i {
+            @apply text-2xl;
+        }
+        p {
+            @apply text-[#8C8C8C];
+        }
+    }
+    &-image {
+        @apply h-30 w-30 rounded-full;
+        i {
+            @apply text-sm cursor-pointer;
+        }
+    }
+}

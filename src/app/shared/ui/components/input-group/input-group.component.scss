@@ -1,0 +1,15 @@
+.uc-input-group {
+    @apply flex flex-row items-center py-1 gap-2.5 bg-[#F1F1F1] rounded-full;
+    i {
+        @apply text-xl text-[#5F5F5F];
+    }
+    input {
+        @apply bg-[#F1F1F1] outline-none text-[#232323] text-sm;
+    }
+    &.prefix {
+        @apply pl-4.5 pr-17; 
+    }
+    &.affix {
+
+    }
+}

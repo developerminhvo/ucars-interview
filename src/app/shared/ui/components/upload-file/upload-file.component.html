@@ -1,0 +1,16 @@
+<input #logoUpload type="file" (change)="uploadLogo($event)">
+
+<ng-container *ngIf="logo === null">                                
+  <div (click)="logoUpload.click()" class="uc-upload-file-area">
+    <i class="material-symbols-outlined">add</i>
+    <p>{{ title }}</p>
+  </div>
+</ng-container> 
+
+<ng-container *ngIf="logo">
+  <div class="uc-upload-file-image" [style.background-size]="'cover'" [style.background-repeat]="'no-repeat'"
+  [style.background-image]="'url(' + logo + ')' ">
+  <i class="material-symbols-outlined" (click)="removeLogo()">delete</i>
+  </div>
+</ng-container>
+

@@ -1,0 +1,9 @@
+.uc__layout {
+    @apply w-full h-full grid grid-cols-12;
+    &__content, uc-header {
+        @apply col-span-10 col-start-3;
+    }
+    uc-sidebar {
+        @apply col-span-2 row-start-1;
+    }
+}

@@ -1,0 +1,18 @@
+<ng-container *ngIf="ucAddOnBeforeIcon">
+  <ng-template *ngTemplateOutlet="prefix"></ng-template>
+</ng-container>
+<ng-container *ngIf="ucAddOnAfterIcon">
+  <ng-template *ngTemplateOutlet="affix"></ng-template>
+</ng-container>
+
+<ng-template #prefix>
+  <i class="material-symbols-outlined">{{ ucAddOnBeforeIcon }}</i>
+  <ng-content select="[uc-input]"></ng-content>
+  <!-- <ng-template *ngTemplateOutlet="ucInputDirective.templateRef"></ng-template> -->
+</ng-template>
+
+<ng-template #affix>
+  <ng-content select="[uc-input]"></ng-content>
+  <!-- <ng-template *ngTemplateOutlet="ucInputDirective.templateRef"></ng-template> -->
+  <i class="material-symbols-outlined">{{ ucAddOnBeforeIcon }}</i>
+</ng-template>
